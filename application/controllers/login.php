@@ -2,16 +2,12 @@
 class Login extends CI_Controller
 
 	{
-	public
-
-	function index()
+	public function index()
 		{
 		$this->load->view("loginView");
 		}
 
-	public
-
-	function validate_credentials()
+	public function validate_credentials()
 		{
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('username', 'Username', 'trim|required');
@@ -31,38 +27,39 @@ class Login extends CI_Controller
 			}
 		  else
 			{
+			foreach($query as $user)
+				{
+				$userId = $user->id;
+				}
+
 			$data = array(
 				'username' => $this->input->post('username') ,
+				'userId' => $userId,
 				'is_logged_in' => "true"
 			);
-			
-			
 			$this->session->set_userdata($data);
 			redirect('login/home');
 			}
 		}
 
-	public
-
-	function home()
-	{
-		if (($this->session->userdata('username')!= '')){
-		
-		
-		$this->load->view('main');
-		
+	public function home()
+		{
+		if (($this->session->userdata('username') != ''))
+			{
+			$userId = $this->session->userdata('userId');
+			$this->load->model("taskmodel");
+			$data['tasks'] = $this->taskmodel->getTask($userId);
+			$this->load->view('main', $data);
+			}
+		  else
+			{
+			redirect('login/index');
+			}
 		}
-	 
-		else{
-		  redirect('login/index');
-		}
-		
-	 }
-	//////// register/////////
 
-	public
+	///register///
 
-	function insert()
+	public function insert()
 		{
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required');
@@ -75,8 +72,6 @@ class Login extends CI_Controller
 			{
 			$data['regerrors'] = validation_errors();
 
-			// $this->load->view("loginView");
-
 			$this->load->view('loginView', $data);
 			}
 		  else
@@ -88,36 +83,31 @@ class Login extends CI_Controller
 			}
 		}
 
+	public function check_if_username_exists($requested_username)
+		{ 
+		$this->load->model('client_model');
+		$username_not_in_use = $this->client_model->check_if_username_exists($requested_username);
+		if ($username_not_in_use)
+			{
+			return TRUE;
+			}
+		  else
+			{
+			return FALSE;
+			}
+		}
 
-
-
-     public function check_if_username_exists($requested_username) { //custom callback function
-	
-	$this->load->model('client_model');
-	
-	$username_not_in_use = $this->client_model->check_if_username_exists($requested_username);
-	
-	if ($username_not_in_use){
-		return TRUE;
-	} else {
-		return FALSE;
+	public function loggedout()
+		{
+		$data = array(
+			'username' => '',
+			'is_logged_in',
+			FALSE,
+		);
+		$this->session->unset_userdata($data);
+		$this->session->sess_destroy();
+		redirect('login/index');
+		}
 	}
-     }
 
-
-public function loggedout(){
-   
-  
-  $data = array (
-   'username' => '',
-   'is_logged_in', FALSE,
-   );
-  
-  $this->session->unset_userdata($data);
- $this->session->sess_destroy();
-  redirect('login/index');
-}
-
-
-}
 ?>

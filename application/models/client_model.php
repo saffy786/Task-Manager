@@ -3,20 +3,19 @@ class Client_model extends CI_Model
 
 	{
 
-	// login///////
+	//login//
 
 	function validate()
 		{
+		$this->db->select('*');
+		$this->db->from('users');
 		$this->db->where('username', $this->input->post('username'));
 		$this->db->where('password', md5($this->input->post('password')));
-		$query = $this->db->get('users');
-		if ($query->num_rows == 1)
-			{
-			return true;
-			}
+		$query = $this->db->get('');
+		return $query->result();
 		}
 
-	// registeration /////////
+	//registeration//
 
 	function create_login()
 		{
@@ -31,8 +30,6 @@ class Client_model extends CI_Model
 		return $insert;
 		}
 
-                
-                
 	function check_if_username_exists($username)
 		{
 		$this->db->where('username', $username);
