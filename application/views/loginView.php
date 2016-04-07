@@ -1,16 +1,26 @@
 <!DOCTYPE HTML>
  <html>
   <head>
-   
+   <link href="<?php echo base_url() ."/css/style.css";?>" rel="stylesheet" type="text/css">
    <title>Login</title>
   </head>
   <body>
    
-        <h1>Task Manager</h1>
+
+      <h1>Welcome To Task Manager</h1>
+	
+      <div class="form-bg">
+       
+  
+<?php
+
+
+echo form_open('login/validate_credentials');
+?>
+
+      <h2>Login To Task Manager</h2>
       
-        <h1>Login</h1>
-        <div id="log_in">
-        <?php
+            <?php
 
 if (isset($errormessage))
 	{
@@ -21,23 +31,38 @@ if (isset($loginerrors))
 	{
 	echo "$loginerrors";
 	}
-
-echo form_open('login/validate_credentials');
-echo form_label('Username: ');
-echo "<input type = 'text' name='username' id='username' placeholder='Username' Required >";
-echo form_label('Password: ');
-echo "<input type = 'password' name='password' placeholder='Password' Required >";
-echo form_submit('login_submit', 'Login');
+?> 
+     
+      <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
+      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
+      <button name="login_submit" type="submit">Login</button>
+<?php
 echo form_close();
 ?>
-        </div>
+      
+  </div>
+     
+     
+     
+     
      
       
-      <!--register client -->
+      <!---------------register client ----------------------------->
       
-        <h1>Register Client</h1>
+     
+     
+     
+     <div class="form-bg-reg">
+    
+<?php
+
+
+echo form_open('login/insert');
+?>
+
+      
+        <h2>Create A Task Manager Account</h2>
         
-        <div id="register">
          <?php
 
 if (isset($account_created))
@@ -50,25 +75,20 @@ if (isset($regerrors))
 	echo "$regerrors";
 	}
 
-
-echo form_open('login/insert');
-echo form_label('First name:', 'first_name');
-echo "<input name='first_name' placeholder='First Name' Required >";
-echo form_label('Last name:', 'last_name');
-echo "<input name='last_name' placeholder='Last Name' Required >";
-echo form_label('Username:', 'username');
-echo "<input name='username' placeholder='Username' Required >";
-echo form_label('Email:', 'email');
-echo "<input name='email' placeholder='Email' Required >";
-echo form_label('Password:', 'password');
-echo "<input name='password' type = 'password' placeholder='Password' Required >";
-echo form_label('Confirm Password:', 'password_confirm');
-echo "<input name='password_confirm' type = 'password' placeholder='Confirm Password' Required >";
-echo form_submit('add_btn', 'Register');
+?>
+        <input type="text" class="form-control" name="first_name" placeholder="First Name" required="" autofocus="" />
+	<input type="text" class="form-control" name="last_name" placeholder="Last Name" required="" autofocus="" />
+	<input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
+	<input type="text" class="form-control" name="email" placeholder="Email" required="" autofocus="" />
+	<input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+	<input type="password" class="form-control" name="password_confirm" placeholder="Confirm Password" required=""/>    
+	<button name="add_btn" type="submit">Register</button>
+      
+<?php
 echo form_close();
 ?>
       
-        
+    
         </div>
      
        

@@ -11,7 +11,7 @@
 
 foreach($task as $taskData)
 	{
-	echo "<h1>Update Task: " . $taskData->task_name . "</h1>";
+	echo "<h2>Update Task: " . $taskData->task_name . "</h2>";
 	echo form_open('addtask/updatetask');
 	echo form_label('', 'taskId');
 	echo "<input type='text' class='hide' name='taskId' value='" . $taskData->id . "' required>";

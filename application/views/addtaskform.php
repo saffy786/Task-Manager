@@ -1,16 +1,13 @@
 <!DOCTYPE HTML>
  <html>
   <head>
-   
+   <link href="<?php echo base_url() ."/css/style.css";?>" rel="stylesheet" type="text/css">
    
   </head>
   <body>
-   <h1>View All Tasks</h1>
    
-
-  
    
-<h1>List of Tasks</h1>
+<h2>Edit A Task</h2>
 
 <?php
 echo form_open('addtask/inserttask');

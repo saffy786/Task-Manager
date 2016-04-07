@@ -2,21 +2,22 @@
 <html>
 
 <head>
+    <link href="<?php echo base_url() ."/css/style.css";?>" rel="stylesheet" type="text/css">
     <title>Login</title>
 </head>
 
 <body>
 
-    <h1>Task Manager</h1>
+    
     
                 <div id="log_in">
                     
-                    <p>Welcome <?php echo $this->session->userdata('username');
+                    <h1>Welcome <?php echo $this->session->userdata('username');
         
                     ?>
-                    </p>
+                    </h1>
                     
-                     <h1>Your Tasks</h1>
+                     <h2>View Your Tasks</h2>
 
   <?php
 
@@ -29,11 +30,12 @@ foreach($tasks as $tasks)
 	echo "<b>Task Progress:</b>  " . $tasks->task_progress . "</p>";
 	}
 
-echo "<a href='" . base_url() . "index.php/login/home'>To Home Page</a>";
+echo "<a href='" . base_url() . "index.php/login/home'>Back To HomePage</a>";
 ?>
                 </div>
     
-    <p> <?php  echo "<a href='".site_url('login/loggedout')."'>Logout</a>" ?> </p> 
+    <p> <?php  echo "<a href='".site_url('login/loggedout')."'>Logout</a>" ?> </p>
+    
 </body>
 
 </html>

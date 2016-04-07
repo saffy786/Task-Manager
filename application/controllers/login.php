@@ -38,7 +38,7 @@ class Login extends CI_Controller
 				'is_logged_in' => "true"
 			);
 			$this->session->set_userdata($data);
-			redirect('login/home');
+			redirect('login/home', 'refresh');
 			}
 		}
 
