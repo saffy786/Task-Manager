@@ -2,7 +2,7 @@
  <html>
   <head>
    <link href="<?php echo base_url() ."/css/style.css";?>" rel="stylesheet" type="text/css">
-   
+   <title>Task Manager Update Task</title>
   </head>
   <body>
 
@@ -12,6 +12,11 @@
 foreach($task as $taskData)
 	{
 	echo "<h2>Update Task: " . $taskData->task_name . "</h2>";
+	?>
+	<div id="box1">
+	<div class="update-form">
+	
+	<?php
 	echo form_open('addtask/updatetask');
 	echo form_label('', 'taskId');
 	echo "<input type='text' class='hide' name='taskId' value='" . $taskData->id . "' required>";
@@ -43,8 +48,8 @@ foreach($task as $taskData)
 echo "<a href='" . base_url() . "index.php/login/home'>To Home Page</a>";
 ?>
 
-
-
+</div>
+</div>
 </body>
 
 </html>

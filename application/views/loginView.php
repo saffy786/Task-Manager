@@ -43,14 +43,9 @@ echo form_close();
   </div>
      
      
-     
-     
-     
-      
       <!---------------register client ----------------------------->
       
-     
-     
+    
      
      <div class="form-bg-reg">
     
