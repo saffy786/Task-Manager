@@ -55,7 +55,7 @@ foreach($tasks as $tasks)
 ?>		   
 		   
 		   
-               
+          <br>     
     
     <p> <?php  echo "<a href='".site_url('login/loggedout')."'>Logout</a>" ?> </p>
     

@@ -14,7 +14,7 @@ h1{
 /* LOGIN */
 .form-bg {
 		width: 367px;
-		height: 270px;
+		height: 285px;
 		-moz-border-radius:9px;
 		-webkit-border-radius:9px;
 		border-radius:21px;
@@ -22,12 +22,15 @@ h1{
 		background: black url(../images/form-bg.png) top left;
 		padding: 8px 0 0 8px;
 		float: left;
-
+		font-family: cursive;
+		font-size: 17px;
+		color: black;
+		color: red;
 		}
 	
 	.form-bg form {
 		width: 360px;
-		height: 239px;
+		height: 258px;
 		background: #fff url(../images/bg_form.jpg) repeat-x top left;		
 		-moz-border-radius:4px;
 		-webkit-border-radius:4px;
@@ -35,7 +38,10 @@ h1{
 		-moz-box-shadow:0px 1px 3px 2px rgba(0,0,0,0.1);
 		-webkit-box-shadow:0px 1px 3px 2px rgba(0,0,0,0.1);
 		box-shadow:0px 1px 3px 2px rgba(0,0,0,0.1);
-	}
+}
+	
+	
+	
 	
 	.form-bg form h2 {
 		font-size: 14px;
@@ -55,7 +61,7 @@ h1{
 	
 	.form-bg-reg {
 		width: 367px;
-		height: 503px;
+		height: 605px;
 		-moz-border-radius:9px;
 		-webkit-border-radius:9px;
 		border-radius:21px;
@@ -68,7 +74,7 @@ h1{
 	
 	.form-bg-reg form {
 		width: 360px;
-		height: 468px;
+		height: 577px;
 		background: #fff url(../images/bg_form.jpg) repeat-x top left;		
 		-moz-border-radius:4px;
 		-webkit-border-radius:4px;
@@ -100,7 +106,7 @@ h1{
 		padding: 0 10px 0 10px;
 		margin: 10px 21px;
 		color: #aeaeae;
-		border: 2px solid #bec2c4;
+		border: 2px solid #000000;
 	}
 	
 	input[type="text"]:focus, input[type="password"]:focus{
@@ -114,7 +120,7 @@ h1{
 	
 	
 	button {
-		background: #555555;;
+		background: #555555;
 		width:82px;
 		height:32px;
 		border:0px;
@@ -127,7 +133,7 @@ h1{
 	}
 	
 	button:hover {
-		background: #e7e7e7;;
+		background: #e7e7e7;
 		width:82px;
 		height:32px;
 		box-shadow: 0px 0px 0px 4px black;
@@ -148,7 +154,7 @@ h1{
 	
 	label {
 		display: inline;
-		margin-left: 24px;
+		/*margin-left: 24px;*/
 		vertical-align: middle;
 		color: black;
 		
@@ -159,29 +165,22 @@ h1{
 		font-size: 12px;
 	}
     
-/* BOX */
+/* Box */
 
 
 #box1
 {
-	background-color: #F4F4F4;
-	color: white;
-	width:46%;
-	border:5px solid black;
-	box-shadow: 13px 18px 54px 1px white;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: -17px;
-	display: inline-block;
-	min-width: 900px;
-	
+    background-color: #F4F4F4;
+
+    border: 3px solid black;
+    min-width: 931px;
+    float: left;
 		
 }
 
 
 
-
-/* VIEW ALL TASKS */
+/* View All Tasks */
 
 table{
  	
@@ -190,7 +189,7 @@ table{
 }
 
 table tr th, table tr td
-{ 	background: #1ABC9C;
+{ 	background: #61bd4f;
 	color: #000;
 	padding: 0px 0px;
 	border-color: black;
@@ -200,7 +199,7 @@ table tr th, table tr td
 }
   
 table tr td
-{ 	background: #1ABC9C;
+{ 	background: #61bd4f;
 	color: #000000;
 	border-top: 1px solid #FFF;
 	font-family: cursive;
@@ -217,22 +216,70 @@ table td th{
 }
 
 
-/* EDIT A TASK */
+/* Edit A Task */
 .edit-form {
-    display: inline-block;
+    display: block;
     padding: 20px;
     margin: 20px;
-    background: #505050;
+    background: #61bd4f;
     border-radius: 7px;
     width: auto;
 }
 
-/* UPDATE A TASK */
+/* Update A Task */
 .update-form {
-    display: inline-block;
+    display: block;
     padding: 20px;
     margin: 20px;
-    background: #505050;
+    background: #61bd4f;
     border-radius: 7px;
     width: auto;
+}
+
+
+/* Update Button */
+.update-button{
+    margin-top: 12px;
+    
+}
+
+
+/* Delete Button */
+.delete-button{
+    margin-left: 94px;
+    margin-top: -21px;
+}
+
+
+/* Text Area */
+
+.textarea{
+    width:819px;
+}
+
+/* visited link */
+a:visited
+{
+    color: blue;
+}
+
+/* mouse over link */
+a:hover
+{
+    color: red;
+}
+
+/* selected link */
+a:active
+{
+    color: red;
+}
+
+
+p {
+    font-family: cursive;
+    font-size: 17px;
+    color: black;
+    margin-top: -5px;
+    color:red;
 }

@@ -44,11 +44,15 @@ foreach($tasks as $tasks)
 	echo "<td><b>Task Progress:</b>  " . $tasks->task_progress . "</p></td>";
 	echo "<td></tr>"; 
 	}
-
-echo "<a href='" . base_url() . "index.php/login/home'>Back To HomePage</a>";
 ?>
-                
-    
+  
+  <p>
+  <?php
+echo "<a href='" . base_url() . "index.php/login/home'>Back To HomePage</a>";
+
+      ?>          
+</p>
+  
     <p> <?php  echo "<a href='".site_url('login/loggedout')."'>Logout</a>" ?> </p>
     
     

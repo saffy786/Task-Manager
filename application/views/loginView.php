@@ -29,10 +29,11 @@ if (isset($errormessage))
 
 if (isset($loginerrors))
 	{
-	echo "$loginerrors";
+	echo "$loginerrors"; 
 	}
-?> 
-     
+	
+?>
+
       <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
       <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
       <button name="login_submit" type="submit">Login</button>
@@ -65,10 +66,7 @@ if (isset($account_created))
 	echo "$account_created";
 	}
 
-if (isset($regerrors))
-	{
-	echo "$regerrors";
-	}
+echo validation_errors('<p class="error">');
 
 ?>
         <input type="text" class="form-control" name="first_name" placeholder="First Name" required="" autofocus="" />

@@ -22,7 +22,7 @@ class Login extends CI_Controller
 		  else
 		if (!$query)
 			{
-			$data["errormessage"] = "username or password not correct";
+			$data["errormessage"] = "Username or Password not correct";
 			$this->load->view("loginView", $data);
 			}
 		  else
