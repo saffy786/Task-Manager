@@ -38,7 +38,8 @@ class Login extends CI_Controller
 				'is_logged_in' => "true"
 			);
 			$this->session->set_userdata($data);
-			redirect('login/home', 'refresh');
+			redirect('login/home');
+                        
 			}
 		}
 
@@ -78,7 +79,7 @@ class Login extends CI_Controller
 			{
 			$this->load->model('client_model');
 			$this->client_model->create_login();
-			$data['account_created'] = 'Your account has been created.<br/><br/>You may now login.';
+			$data['account_created'] = '<p1>Your account has been created.<p1><br/><br/><p1/>You may now login.';
 			$this->load->view('loginView', $data);
 			}
 		}

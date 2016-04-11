@@ -11,6 +11,7 @@ class TaskModel extends CI_Model
 		{ //Gets everything from database
 		$this->db->select('*');
 		$this->db->from('tasks');
+                $this->db->order_by('due_date', 'asc');
 		$this->db->where('user_id', $userId);
 		$query = $this->db->get('');
 		return $query->result();
@@ -22,7 +23,7 @@ class TaskModel extends CI_Model
 			"task_name" => $taskName,
 			"task_description" => $taskDesc,
 			"due_date" => $taskEnd,
-			"create_date" => date("Y-m-d") ,
+			"create_date" => date('Y-m-d H:i:s'),
 			"task_progress" => "Not Started",
 			"user_id"=>$userId
 		);

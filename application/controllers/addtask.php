@@ -14,6 +14,7 @@ class Addtask extends CI_Controller
 		$this->load->model("taskmodel");
 		$data['tasks'] = $this->taskmodel->getTask($userId);
 		$this->load->view("addtaskform", $data);
+                
 		}
 
 	public function insertTask()
@@ -24,7 +25,8 @@ class Addtask extends CI_Controller
 		$taskEnd = $this->input->post('taskEnd');
 		$this->load->model("taskmodel");
 		$data['tasks'] = $this->taskmodel->addTask($taskName, $taskDesc, $taskEnd, $userId);
-		redirect('addtask/alltasks','refresh');
+		redirect('addtask/alltasks');
+                header("Refresh:0");
 		}
 
 	public function allTasks()
@@ -33,6 +35,8 @@ class Addtask extends CI_Controller
 		$this->load->model("taskmodel");
 		$data['tasks'] = $this->taskmodel->getTask($userId);
 		$this->load->view("viewalltasks", $data);
+                
+                
 		}
 
 	public function updateTaskForm()
@@ -41,6 +45,8 @@ class Addtask extends CI_Controller
 		$this->load->model("taskmodel");
 		$data['task'] = $this->taskmodel->getSingleTask($task_id);
 		$this->load->view("updatetaskform", $data);
+                
+                
 		}
 
 	public function updateTask()
@@ -52,7 +58,8 @@ class Addtask extends CI_Controller
 		$task_progress = $this->input->post('taskProgress');
 		$this->load->model("taskmodel");
 		$this->taskmodel->updateTask($task_id, $task_name, $task_desc, $due_date, $task_progress);
-		redirect('addtask/alltasks','refresh');
+		redirect('addtask/alltasks');
+                header("Refresh:0");
 		}
 
 	public function deleteTask()
@@ -60,7 +67,8 @@ class Addtask extends CI_Controller
 		$task_id = $this->input->post('taskId');
 		$this->load->model("taskmodel");
 		$this->taskmodel->deleteTask($task_id);
-		redirect('addtask/alltasks','refresh');
+		redirect('addtask/alltasks');
+                header("Refresh:0");
 		}
 }
                 

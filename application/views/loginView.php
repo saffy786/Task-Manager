@@ -66,7 +66,10 @@ if (isset($account_created))
 	echo "$account_created";
 	}
 
-echo validation_errors('<p class="error">');
+if (isset($regerrors))
+	{
+	echo "$regerrors";
+	}
 
 ?>
         <input type="text" class="form-control" name="first_name" placeholder="First Name" required="" autofocus="" />
