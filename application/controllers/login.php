@@ -4,19 +4,19 @@ class Login extends CI_Controller
 	{
 	public function index()
 		{
-		$this->load->view("loginView");
+		$this->load->view("loginView"); // this loads the loginview
 		}
 
 	public function validate_credentials()
 		{
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('username', 'Username', 'trim|required');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required');
+		$this->form_validation->set_rules('username', 'Username', 'trim|required'); // form validation sets a rule for the username that its a required field
+		$this->form_validation->set_rules('password', 'Password', 'trim|required'); // same for password
 		$this->load->model('client_model');
-		$query = $this->client_model->validate();
+		$query = $this->client_model->validate(); // this runs the validation
 		if ($this->form_validation->run() == FALSE) // no
 			{
-			$data['loginerrors'] = validation_errors();
+			$data['loginerrors'] = validation_errors(); // this stores the validation errors
 			$this->load->view('loginView', $data);
 			}
 		  else
@@ -36,7 +36,7 @@ class Login extends CI_Controller
 				'username' => $this->input->post('username') ,
 				'userId' => $userId,
 				'is_logged_in' => "true"
-			);
+			); // this data is stored in session user data
 			$this->session->set_userdata($data);
 			redirect('login/home');
                         
@@ -79,12 +79,12 @@ class Login extends CI_Controller
 			{
 			$this->load->model('client_model');
 			$this->client_model->create_login();
-			$data['account_created'] = '<p1>Your account has been created.<p1><br/><br/><p1/>You may now login.';
+			$data['account_created'] = '<p1>Your account has been created.<p1><br/><br/><p1/>You may now login.'; // when your account is created it displays a message saying "Your account has been created"
 			$this->load->view('loginView', $data);
 			}
 		}
 
-	public function check_if_username_exists($requested_username)
+	public function check_if_username_exists($requested_username) // checks if the username already exists
 		{ 
 		$this->load->model('client_model');
 		$username_not_in_use = $this->client_model->check_if_username_exists($requested_username);
@@ -98,16 +98,16 @@ class Login extends CI_Controller
 			}
 		}
 
-	public function loggedout()
+	public function loggedout() // Log out Function
 		{
 		$data = array(
 			'username' => '',
 			'is_logged_in',
 			FALSE,
 		);
-		$this->session->unset_userdata($data);
-		$this->session->sess_destroy();
-		redirect('login/index');
+		$this->session->unset_userdata($data); //creates an array with empty values and overwrites the user data that already exits within the session 
+		$this->session->sess_destroy(); // destroy session 
+		redirect('login/index'); // redirects back to login 
 		}
 	}
 

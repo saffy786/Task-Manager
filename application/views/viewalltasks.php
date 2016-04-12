@@ -12,7 +12,7 @@
     
                 
                     
-                    <h1>Welcome <?php echo $this->session->userdata('username');
+                    <h1>Welcome <?php echo $this->session->userdata('username'); // displays the users name with a "Welcome"
         
                     ?>
                     </h1>
@@ -22,7 +22,7 @@
 <div id="box1">		     
 		     
 		     
-		     
+	<!--inserts it into a table-->	     
 		     
 <div class="table1">
 <? echo heading('List of Tasks',3); ?>
@@ -53,7 +53,7 @@ echo "<a href='" . base_url() . "index.php/login/home'>Back To HomePage</a>";
       ?>          
 </p>
   
-    <p> <?php  echo "<a href='".site_url('login/loggedout')."'>Logout</a>" ?> </p>
+    <p> <?php  echo "<a href='".site_url('login/loggedout')."'>Logout</a>" ?> </p> 
     
     
     </table>

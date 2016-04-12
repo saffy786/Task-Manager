@@ -9,26 +9,27 @@ class Addtask extends CI_Controller
 			redirect('login/index');
 			}
 
-		$userId = $this->session->userdata('userId');
-		$data['taskName'] = $this->input->post('taskName');
-		$this->load->model("taskmodel");
-		$data['tasks'] = $this->taskmodel->getTask($userId);
-		$this->load->view("addtaskform", $data);
+		$userId = $this->session->userdata('userId'); // gets the userId from the session data
+		$data['taskName'] = $this->input->post('taskName'); // gets the TaskName from the form
+		$this->load->model("taskmodel"); // this loads the task  model
+		$data['tasks'] = $this->taskmodel->getTask($userId); // activates the get task function in the task model:  when you pass through the userID you get all the task for that user
+		$this->load->view("addtaskform", $data); // this loads the view addtaskform.php
                 
 		}
 
 	public function insertTask()
 		{
-		$userId = $this->session->userdata('userId');
+		$userId = $this->session->userdata('userId'); 
 		$taskName = $this->input->post('taskName');
 		$taskDesc = $this->input->post('taskDescription');
 		$taskEnd = $this->input->post('taskEnd');
 		$this->load->model("taskmodel");
-		$data['tasks'] = $this->taskmodel->addTask($taskName, $taskDesc, $taskEnd, $userId);
-		redirect('addtask/alltasks');
-                header("Refresh:0");
+		$data['tasks'] = $this->taskmodel->addTask($taskName, $taskDesc, $taskEnd, $userId); // activates the add task function in the task model: you can input data and it adds it to the database
+		redirect('addtask/alltasks'); // this redirects you to all tasks 
+                header("Refresh:0"); // refresh's the page automatically 
 		}
 
+         // View all Tasks       
 	public function allTasks()
 		{
 		$userId = $this->session->userdata('userId');
@@ -38,7 +39,7 @@ class Addtask extends CI_Controller
                 
                 
 		}
-
+        //Update Task Form 
 	public function updateTaskForm()
 		{
 		$task_id = $this->uri->segment(3);
@@ -49,6 +50,7 @@ class Addtask extends CI_Controller
                 
 		}
 
+        // Update Task        
 	public function updateTask()
 		{
 		$task_id = $this->input->post('taskId');
@@ -61,7 +63,7 @@ class Addtask extends CI_Controller
 		redirect('addtask/alltasks');
                 header("Refresh:0");
 		}
-
+        // Delete Tasks
 	public function deleteTask()
 		{
 		$task_id = $this->input->post('taskId');

@@ -9,9 +9,9 @@ class TaskModel extends CI_Model
 
 	function getTask($userId)
 		{ //Gets everything from database
-		$this->db->select('*');
+		$this->db->select('*'); // selects all data in tasks table
 		$this->db->from('tasks');
-                $this->db->order_by('due_date', 'asc');
+                $this->db->order_by('due_date', 'asc'); // sets Ascending order by Due_date
 		$this->db->where('user_id', $userId);
 		$query = $this->db->get('');
 		return $query->result();
@@ -23,14 +23,14 @@ class TaskModel extends CI_Model
 			"task_name" => $taskName,
 			"task_description" => $taskDesc,
 			"due_date" => $taskEnd,
-			"create_date" => date('Y-m-d H:i:s'),
+			"create_date" => date('Y-m-d H:i:s'), // displays the date and time
 			"task_progress" => "Not Started",
 			"user_id"=>$userId
 		);
 		return $this->db->insert('tasks', $newTask);
 		}
 
-	function getSingleTask($task_id)
+	function getSingleTask($task_id) // This function gets a single task
 		{ //Gets everything from database
 		$this->db->select('*');
 		$this->db->from('tasks');
@@ -39,7 +39,7 @@ class TaskModel extends CI_Model
 		return $query->result();
 		}
 
-	function updateTask($task_id, $task_name, $task_desc, $due_date, $task_progress)
+	function updateTask($task_id, $task_name, $task_desc, $due_date, $task_progress) // update task
 		{ //Gets everything from database
 		$data = array(
 			"task_name" => $task_name,
@@ -51,7 +51,7 @@ class TaskModel extends CI_Model
 		$this->db->update('tasks', $data);
 		}
 
-	function deleteTask($task_id)
+	function deleteTask($task_id) //delete task
 		{ //Gets everything from database
 		$this->db->where('id', $task_id);
 		$this->db->delete('tasks');

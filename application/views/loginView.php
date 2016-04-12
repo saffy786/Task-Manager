@@ -27,9 +27,9 @@ if (isset($errormessage))
 	echo "$errormessage";
 	}
 
-if (isset($loginerrors))
+if (isset($loginerrors)) // displays an error message
 	{
-	echo "$loginerrors"; 
+	echo "$loginerrors"; //login error
 	}
 	
 ?>
@@ -66,9 +66,9 @@ if (isset($account_created))
 	echo "$account_created";
 	}
 
-if (isset($regerrors))
+if (isset($regerrors)) // displays an error message
 	{
-	echo "$regerrors";
+	echo "$regerrors"; // registration error
 	}
 
 ?>

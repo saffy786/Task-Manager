@@ -7,10 +7,10 @@ class Client_model extends CI_Model
 
 	function validate()
 		{
-		$this->db->select('*');
-		$this->db->from('users');
-		$this->db->where('username', $this->input->post('username'));
-		$this->db->where('password', md5($this->input->post('password')));
+		$this->db->select('*'); // this selects all data in users table
+		$this->db->from('users'); // gets the information from users table 
+		$this->db->where('username', $this->input->post('username')); 
+		$this->db->where('password', md5($this->input->post('password'))); // adds md5 encryption in mysql database so you cannot see the password
 		$query = $this->db->get('');
 		return $query->result();
 		}
@@ -30,7 +30,7 @@ class Client_model extends CI_Model
 		return $insert;
 		}
 
-	function check_if_username_exists($username)
+	function check_if_username_exists($username) // checks if username exists in the database
 		{
 		$this->db->where('username', $username);
 		$result = $this->db->get('users');
