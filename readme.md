@@ -23,3 +23,6 @@
 
 <h1>How task manager works</h1>
 <p>This task manager process by registering an account and then logging in. A user can add/update/delete/view/set a task, but the user can only see their tasks. For example another user logs in they will not be able to see anyone else’s tasks apart from the once they have set them self’s on their account.</p>
+
+<h>Framework used – CodeIgniter</h1>
+<p>CodeIgniter is an open source PHP framework that underpins the Models, Views, Controllers (MVC). You can develop a website and customise your own needs by using this framework as it’s an open source and simple to configure also much faster and easier to use and user friendly. CodeIgniter contains a grab bag of libraries, helpers, plug-ins and many other resources that deals with complex functions in PHP.</p>
