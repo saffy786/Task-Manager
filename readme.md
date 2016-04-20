@@ -26,3 +26,9 @@
 
 <h1>Framework used – CodeIgniter</h1>
 <p>CodeIgniter is an open source PHP framework that underpins the Models, Views, Controllers (MVC). You can develop a website and customise your own needs by using this framework as it’s an open source and simple to configure also much faster and easier to use and user friendly. CodeIgniter contains a grab bag of libraries, helpers, plug-ins and many other resources that deals with complex functions in PHP.</p>
+
+<h1>Installation - Instructions</h1>
+
+<p>The process includes by opening up the application/config/config.php text editor file and then set your base URL. As I have used encryption and session then you will have to set your encryption key.</p1>
+
+<p>For the database you will need to go to application/config/database.php open text editor file and set the database location such as (hostname/database/username/password).</p1>
