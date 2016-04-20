@@ -20,3 +20,6 @@
 </ul>
 
 <p>The advance feature that I have included is to set an active record that gets the date from database and if the due date is less than the date 3 days from now it displays the task.</p>
+
+<h1>How task manager works</h1>
+<p>This task manager process by registering an account and then logging in. A user can add/update/delete/view/set a task, but the user can only see their tasks. For example another user logs in they will not be able to see anyone else’s tasks apart from the once they have set them self’s on their account.</p>
