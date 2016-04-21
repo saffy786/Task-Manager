@@ -29,6 +29,8 @@ echo form_close();
 <br>
  
 <p>
+ 
+ 
 <?php
 echo "<a href='" . base_url() . "index.php/login/home'>To Home Page</a>"; // link to go to the Homepage
 

@@ -8,7 +8,7 @@
 
 <body>
 
-    
+    <p> <?php  echo "<a href='".site_url('login/loggedout')."'><button class='exit-btn exit-btn-4'>Logout</button></a>" ?> </p>
     
                 
                     
@@ -52,8 +52,7 @@ echo "<a href='" . base_url() . "index.php/login/home'>Back To HomePage</a>";
 
       ?>          
 </p>
-  
-    <p> <?php  echo "<a href='".site_url('login/loggedout')."'>Logout</a>" ?> </p> 
+   
     
     
     </table>

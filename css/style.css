@@ -17,6 +17,19 @@ p1{
     color: #61bd4f;
 }
 
+.task-colour td{
+    background-color: #BC1325;
+    color: white;
+    padding: 4px;
+ 
+}
+.task-colour {
+    width: 64%;
+}
+
+.table-header td{
+    background-color: #FA9B00;
+}
 
 
 
@@ -117,6 +130,7 @@ p1{
 		margin: 10px 21px;
 		color: #aeaeae;
 		border: 2px solid #000000;
+		
 	}
 	
 	input[type="text"]:focus, input[type="password"]:focus{
@@ -130,31 +144,33 @@ p1{
 	
 	
 	button {
-		background: #555555;
-		width:82px;
-		height:32px;
+		background: #F4F4F4;
+		
 		border:0px;
 		float: right;
-		margin-right: 142px;
+		margin-right: 152px;
 		box-shadow: 0px 0px 0px 4px black;
 		border: 1px solid white;
-		color: white;
+		color: blue;
 		margin-top: 7px;
+		width: 89px;
+		height: 28px;
+		font-family: cursive;
+		font-size: 18px;
+
 	}
 	
 	button:hover {
-		background: #e7e7e7;
-		width:82px;
-		height:32px;
+		background: #9BCAF2;
+		
 		box-shadow: 0px 0px 0px 4px black;
 		border: 1px solid white;
 		color: black;
 	}
 	
 	button:active {
-		background: #555555;
-		width:82px;
-		height:32px;
+		background: #FA9B00;
+		
 		border:0px;
 		box-shadow: 0px 0px 0px 4px black;
 		border: 1px solid white;
@@ -181,10 +197,9 @@ p1{
 #box1
 {
     background-color: #F4F4F4;
-
-    border: 3px solid black;
+ /*   border: 3px solid black;
     min-width: 931px;
-    float: left;
+    float: left;*/
 		
 }
 
@@ -196,20 +211,21 @@ table{
  	
 	margin: auto;
 	margin-bottom: 10px;
+	border: none;
+	padding: 4px;
 }
 
 table tr th, table tr td
-{ 	background: #61bd4f;
-	color: #000;
-	padding: 0px 0px;
-	border-color: black;
+{ 	background: #FA9B00;
+	color: #FFF;
+	padding: 4px;
 	font-family: cursive;
 	text-align: center;
 	font-size: 18px;
 }
   
 table tr td
-{ 	background: #61bd4f;
+{ 	background: #F2B694;
 	color: #000000;
 	border-top: 1px solid #FFF;
 	font-family: cursive;
@@ -217,7 +233,7 @@ table tr td
 	font-size: 15px;
 }
 	
-tr:hover td { background: #bdc3c7; }
+tr:hover td { background: #9BCAF2; }
 	
 	
 table td th{
@@ -231,7 +247,7 @@ table td th{
     display: block;
     padding: 20px;
     margin: 20px;
-    background: #61bd4f;
+    background: #9BCAF2;
     border-radius: 7px;
     width: auto;
 }
@@ -241,7 +257,7 @@ table td th{
     display: block;
     padding: 20px;
     margin: 20px;
-    background: #61bd4f;
+    background: #9BCAF2;
     border-radius: 7px;
     width: auto;
 }
@@ -264,7 +280,7 @@ table td th{
 /* Text Area */
 
 .textarea{
-    width:819px;
+    width:298px;
 }
 
 /* visited link */
@@ -294,13 +310,70 @@ p {
     color:red;
 }
 
-.table2{
+/*.table2{
     background-color: red;
-}
+}*/
 
 
 hr{
     background-color: #000000;
-    height: 5px;
+    height: 63%;
 }
 
+
+.exit-btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.exit-btn { 
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    /*padding: 25px 80px;*/
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s; 
+}
+
+.exit-btn-3 {
+    background-color: #282F8A;
+    color: #fff;
+    border-radius: 7px;
+    box-shadow: 0 5px #202670;
+    padding: 25px 60px 25px 90px;
+}
+
+.exit-btn-3:before {
+    position: absolute;
+    left: 0;
+    font-size: 160%;
+    line-height: 0.8;
+    color: #fff;
+    content: "\e163";
+    font-family: 'Glyphicons Halflings';
+}
+
+
+#center-input{
+    margin-right: auto;
+    margin-left: auto;
+    display: table;
+}
+
+.add-task-input{
+    text-align: center;
+}
