@@ -18,21 +18,7 @@
                     ?>
                     </h1>
                      
-		    
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
+
 		   
 		   
 		   
@@ -118,8 +104,8 @@ foreach($tasks as $task)
 echo "</table>"; 
 echo "<hr>";
 
-
-echo "<select id='selectFilter' name='filter' onchange='filter();'>";
+//filter task progress, drop down list
+echo "<select id='selectFilter' name='filter' onchange='filter();'>"; //on change activates js function
 echo "<option value='noFilter'>Select Filter</option>";
 echo "<option value='Not Started'>Not Started</option>";
 echo "<option value='In Progress'>In Progress</option>";
