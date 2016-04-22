@@ -28,7 +28,14 @@
 <? echo heading('List of Tasks',3); ?>
 <table border="3">
   <tr>
-    <th rowspan="20">List of Tasks</th>    
+    <th colspan="5">List of Tasks</th>    
+  </tr>
+  <tr>
+    <th>Task Name</th>
+    <th>Task Description</th>
+    <th>Due Date</th>
+    <th>Create Date/Time</th>
+    <th>Task Progress</th>  
   </tr>  
 		     
 		     
@@ -37,12 +44,12 @@
 foreach($tasks as $tasks)
 	{
 	echo "<tr>";
-	echo "<td><p><a href='" . base_url() . "index.php/addtask/updatetaskform/" . $tasks->id . "'><b>Task Name:</b> " . $tasks->task_name . "</a><br/></td>";
-	echo "<td><b>Task Description:</b> " . $tasks->task_description . "<br/></td>";
-	echo "<td><b>Due Date:</b>  " . $tasks->due_date . "<br/></td>";
-	echo "<td><b>Create Date/Time:</b>  " . $tasks->create_date . "<br/></td>";
-	echo "<td><b>Task Progress:</b>  " . $tasks->task_progress . "</p></td>";
-	echo "<td></tr>"; 
+	echo "<td><p><a href='" . base_url() . "index.php/addtask/updatetaskform/" . $tasks->id . "'>" . $tasks->task_name . "</a><br/></td>";
+	echo "<td>" . $tasks->task_description . "<br/></td>";
+	echo "<td>" . $tasks->due_date . "<br/></td>";
+	echo "<td>" . $tasks->create_date . "<br/></td>";
+	echo "<td>" . $tasks->task_progress . "</p></td>";
+	echo "</tr>"; 
 	}
 ?>
   

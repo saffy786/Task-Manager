@@ -18,13 +18,24 @@ p1{
 }
 
 .task-colour td{
-    background-color: #BC1325;
     color: white;
     padding: 4px;
  
 }
 .task-colour {
     width: 64%;
+}
+
+.green{
+    background-color: green;
+}
+
+.yellow{
+    background-color: darkgoldenrod;
+}
+
+.red{
+    background-color: #BC1325;
 }
 
 .table-header td{
@@ -213,6 +224,8 @@ table{
 	margin-bottom: 10px;
 	border: none;
 	padding: 4px;
+	width:64%;
+	
 }
 
 table tr th, table tr td
@@ -376,4 +389,13 @@ hr{
 
 .add-task-input{
     text-align: center;
+}
+
+.right{
+    float: right;
+    margin-right: 10px;
+}
+#selectFilter{
+    float:right;
+    margin-right: 20px;
 }

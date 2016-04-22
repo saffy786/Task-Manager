@@ -72,6 +72,39 @@ class Addtask extends CI_Controller
 		redirect('addtask/alltasks');
                 header("Refresh:0");
 		}
+                
+         // Filter Tasks      
+	public function filter()
+		{
+                $userId = $this->session->userdata('userId');
+		$selectFilter = $this->input->post('selectFilter');
+		$this->load->model("taskmodel");
+		$tasks = $this->taskmodel->getTask($userId);
+                
+                echo "<tr class='table-header'><td>Task Name</td><td>Task Description</td><td>Due Date</td><td>Create Date/Time</td><td>Task Progress</td></tr>";
+                
+                foreach($tasks as $task){
+                    if($selectFilter=="noFilter"){
+                        echo "<tr>";
+                        echo "<td><p><a href='" . base_url() . "index.php/addtask/updatetaskform/" . $task->id . "'> " . $task->task_name . "</a><br/></td>";
+                        echo "<td>" . $task->task_description . "<br/></td>";
+                        echo "<td> " . $task->due_date . "<br/></td>";
+                        echo "<td>  " . $task->create_date . "<br/></td>";
+                        echo "<td> " . $task->task_progress . "</p></td>";
+                        echo "</tr>"; 
+                    }else if($task->task_progress==$selectFilter){
+                        echo "<tr>";
+                        echo "<td><p><a href='" . base_url() . "index.php/addtask/updatetaskform/" . $task->id . "'> " . $task->task_name . "</a><br/></td>";
+                        echo "<td>" . $task->task_description . "<br/></td>";
+                        echo "<td> " . $task->due_date . "<br/></td>";
+                        echo "<td>  " . $task->create_date . "<br/></td>";
+                        echo "<td> " . $task->task_progress . "</p></td>";
+                        echo "</tr>"; 
+                    }
+                }
+                
+                echo "</table>"; 
+		}
 }
                 
 ?>
