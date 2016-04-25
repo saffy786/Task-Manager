@@ -6,6 +6,8 @@ function filter() {
         data: {selectFilter: selectFilter}, //this data will be pushed with the post
         success: function(data){
             $("#table2").html(data); //this will output the data returned from the controller
+            //console.log($(data).find('tr').length);
         }
+        
     })
 }

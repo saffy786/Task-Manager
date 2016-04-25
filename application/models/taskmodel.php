@@ -11,6 +11,7 @@ class TaskModel extends CI_Model
 		{ //Gets everything from database
 		$this->db->select('*'); // selects all data in tasks table
 		$this->db->from('tasks');
+                $this->db->count_all();
                 $this->db->order_by('due_date', 'asc'); // sets Ascending order by Due_date
 		$this->db->where('user_id', $userId);
 		$query = $this->db->get('');

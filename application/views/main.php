@@ -18,10 +18,9 @@
                     ?>
                     </h1>
                      
-
+<?php  echo "<a href='".site_url('login/search')."'><button class='exit-btn exit-btn-4'>Click To Search</button></a>" ?> <!--takes you to the search page -->
 		   
-		   
-		   
+		    
      
 		     <!-- Add task input box form -->
 		     
@@ -131,10 +130,24 @@ foreach($tasks as $tasks)
 	echo "<td> " . $tasks->due_date . "<br/></td>";
 	echo "<td>  " . $tasks->create_date . "<br/></td>";
 	echo "<td> " . $tasks->task_progress . "</p></td>";
-	echo "</tr>"; 
+	
+	  //echo $counter++; 
 	}
 
 echo "</table>"; 
+
+//echo "<div id='mydiv'></div>";
+//
+//
+//
+// ob_start();
+//echo $counter;
+//echo " Results found ";
+//
+//$out1 = ob_get_contents();
+//ob_end_clean();
+//
+//echo $out1;; 
 
  
 

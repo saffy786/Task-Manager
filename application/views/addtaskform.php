@@ -32,7 +32,7 @@ echo form_close();
  
  
 <?php
-echo "<a href='" . base_url() . "index.php/login/home'>To Home Page</a>"; // link to go to the Homepage
+echo "<a href='" . base_url() . "index.php/login/home'>Back To Home Page</a>"; // link to go to the Homepage
 
 ?>
 </p>

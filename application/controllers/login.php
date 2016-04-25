@@ -6,6 +6,14 @@ class Login extends CI_Controller
 		{
 		$this->load->view("loginView"); // this loads the loginview
 		}
+                
+                
+                public function search()
+		{
+		$this->load->view("search"); // this loads the search page
+		}
+
+                
 
 	public function validate_credentials()
 		{
