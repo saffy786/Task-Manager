@@ -18,6 +18,8 @@
 <li>Sets Ascending order by Due_date</li>
 <li>Displays the date and time of each task when added</li>
 <li>Added filter function for task progress</li>
+<li>Displays results for each task when filter by task progress the results found will show</li>
+
 </ul>
 
 <p>The advance feature that I have included is to set an active record that gets the date from database and if the due date is less than the date 3 days from now it displays the task.</p>
