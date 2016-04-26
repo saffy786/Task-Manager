@@ -18,10 +18,13 @@
                     ?>
                     </h1>
                      
-<?php  echo "<a href='".site_url('login/search')."'><button class='exit-btn exit-btn-4'>Click To Search</button></a>" ?> <!--takes you to the search page -->
-		   
 		    
-     
+		    <?php
+	           echo form_open('login/search'); //takes you to the search page
+		   echo form_submit('searchTaskBtn', 'Click To Search For A Task');
+		   echo form_close();
+		   ?>
+		    
 		     <!-- Add task input box form -->
 		     
                     <div class="add-task-input">
@@ -103,6 +106,8 @@ foreach($tasks as $task)
 echo "</table>"; 
 echo "<hr>";
 
+echo "<div id='resultsFound'></div>";
+
 //filter task progress, drop down list
 echo "<select id='selectFilter' name='filter' onchange='filter();'>"; //on change activates js function
 echo "<option value='noFilter'>Select Filter</option>";
@@ -121,7 +126,7 @@ echo "<table id='table2' class='table2'>";
 echo "<tr><th colspan='5'>Your Tasks</th></tr>";
 echo "<tr class='table-header'><td>Task Name</td><td>Task Description</td><td>Due Date</td><td>Create Date/Time</td><td>Task Progress</td></tr>";
 
-	
+$counter=0;	
 foreach($tasks as $tasks)
 	{    
 	echo "<tr>";
@@ -130,29 +135,17 @@ foreach($tasks as $tasks)
 	echo "<td> " . $tasks->due_date . "<br/></td>";
 	echo "<td>  " . $tasks->create_date . "<br/></td>";
 	echo "<td> " . $tasks->task_progress . "</p></td>";
-	
-	  //echo $counter++; 
+	$counter++; 
 	}
 
 echo "</table>"; 
 
-//echo "<div id='mydiv'></div>";
-//
-//
-//
-// ob_start();
-//echo $counter;
-//echo " Results found ";
-//
-//$out1 = ob_get_contents();
-//ob_end_clean();
-//
-//echo $out1;; 
-
- 
 
 ?>		   
-		   
+
+<script>
+	  $('#resultsFound').html("<?php echo $counter." Results Found"; ?>")
+</script>	   
 	  
 </div>
 </div>

@@ -82,7 +82,7 @@ class Addtask extends CI_Controller
 		$tasks = $this->taskmodel->getTask($userId);
                 
                 echo "<tr class='table-header'><td>Task Name</td><td>Task Description</td><td>Due Date</td><td>Create Date/Time</td><td>Task Progress</td></tr>";
-                
+                $d=0;
                 foreach($tasks as $task){
                     if($selectFilter=="noFilter"){ //if there is no filter (outputs all values)
                         echo "<tr>";
@@ -91,7 +91,8 @@ class Addtask extends CI_Controller
                         echo "<td> " . $task->due_date . "<br/></td>";
                         echo "<td>  " . $task->create_date . "<br/></td>";
                         echo "<td> " . $task->task_progress . "</p></td>";
-                        echo "</tr>"; 
+                        echo "</tr>";
+			$d++;
                     }else if($task->task_progress==$selectFilter){ // if task progress is the same as the users selected task progress, it outputs that value
                         echo "<tr>";
                         echo "<td><p><a href='" . base_url() . "index.php/addtask/updatetaskform/" . $task->id . "'> " . $task->task_name . "</a><br/></td>";
@@ -99,11 +100,13 @@ class Addtask extends CI_Controller
                         echo "<td> " . $task->due_date . "<br/></td>";
                         echo "<td>  " . $task->create_date . "<br/></td>";
                         echo "<td> " . $task->task_progress . "</p></td>";
-                        echo "</tr>"; 
+                        echo "</tr>";
+			$d++;
                     }
                 }
-                
-                echo "</table>"; 
+		echo "<tr class='hide'><td id='resultsVal'>".$d."</td></tr>";
+                echo "</table>";
+		
 		}
 }
                 

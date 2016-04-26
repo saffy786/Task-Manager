@@ -399,3 +399,15 @@ hr{
     float:right;
     margin-right: 20px;
 }
+
+
+
+#resultsFound{
+        display: inline-block;
+}
+
+input[name=searchTaskBtn]{
+    position: absolute;
+    margin-top: 24px;
+}
+
