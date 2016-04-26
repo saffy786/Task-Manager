@@ -19,6 +19,7 @@
 <li>Displays the date and time of each task when added</li>
 <li>Added filter function for task progress</li>
 <li>Displays results for each task when filter by task progress the results found will show</li>
+<li>Search functionality with displaying number of results</li>
 
 </ul>
 
