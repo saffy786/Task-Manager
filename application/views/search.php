@@ -26,7 +26,7 @@
 
 		    <form action="" method="post">
 		    <label for="search">Search Task</label>
-		    <input placeholder="eg: Task Name, Due Date" name="search" id="search">
+		    <input placeholder="eg: Task Name, Due Date" name="search" id="search" required>
 		    <input id= "submit"type="submit" value="Search">
 		    </form>
 		    </div>
@@ -37,7 +37,7 @@
 /*gains access to database*/
     require_once("config.inc.php");
 
-  
+  $counter = 0;
 /*search box code (enter a search term or results won't display)*/
 if(isset($_POST['search']))
 {
@@ -46,7 +46,7 @@ if(isset($_POST['search']))
 	if ($search_term =="")
 	{
 	    /*without typing in the search term a message will appear (please enter your search term*/
-	    echo "Please Enter Your Search Term";
+	    echo "Please Enter Your Search";
 	}else
     {
 	
@@ -58,7 +58,7 @@ $stmt->execute();
 
 /*the count starts from 0 and when the while loop goes around it collects how many tasks and Due dates have shown*/
 
-$counter = 0;
+
 ob_start();
 echo "<br>";
 echo "<table id='table2' class='table2'>";
