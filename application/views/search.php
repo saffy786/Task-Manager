@@ -134,7 +134,7 @@ while ($tasks=$stmt->fetch(PDO::FETCH_OBJ))
 		    
 		    
 		    
-		    //active record  gets the date from database and if the due date is less than the date 3 days from now it displays the task//
+		    //active record  gets the date from database and if the due date is less than the date 3 days from now it displays the task status with the correct colour co-ordinate//
 		    
 		    echo "</tr>";
          
