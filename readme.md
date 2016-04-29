@@ -11,8 +11,8 @@
 
 <p>I have created a Task Manager using ‘CodeIgniter”. The features that have been included in the website are:</p>
 <ul>
-<li>Register</li> <p>Use of Validation</p>
-<li>Login</li> <p>Use of Validation</p>
+<li>Register (Use of Validation)</li>
+<li>Login (Use of Validation)</li> 
 <li>Add a task</li>
 <li>Update a task</li>
 <li>Delete a task</li>
