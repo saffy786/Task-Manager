@@ -21,8 +21,8 @@
 <li>Sets Ascending order by Due_date</li>
 <li>Displays the date and time of each task when added</li>
 <li>Added filter function for task progress with Ajax</li>
-<li>Displays results for each task when filter by task progress the results found will show</li>
-<li>Search functionality with displaying number of results</li>
+<li>Displays results for each task when filtered by task progress the results found will display</li>
+<li>Search functionality with displaying number of results and showing each task status with correct colour co-ordinate</li>
 
 </ul>
 
